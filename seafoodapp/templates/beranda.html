@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<h1>
+    {{Heading}}
+</h1>
+<br><br>
+<table class="table table-striped table-hover" width="100%">
+
+    <thead>
+      <tr>
+        <th scope="col">NAMA</th>
+        <th scope="col">KINGDOM</th>
+        <th scope="col">FILUM</th>
+        <th scope="col">KELAS</th>
+        <th scope="col">IMAGES</th>
+        <th scope="col">DETAIL</th>
+        <th scope="col">AKSI</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for seafood in foods %}
+<tr>
+    <td>{{ seafood.nama}}</td>
+    <td>{{ seafood.kingdom}}</td>
+    <td>{{ seafood.filum_id}}</td>
+    <td>{{ seafood.kelas }}</td>
+    <td> <img src="{% static seafood.image %}" alt="" width="150px"> </td>
+    <td><a class="btn btn-success" href="{{ seafood.detail}}">Detail</a></td>
+    <td><a class="btn btn-warning" href="{% url 'update_sea' seafood.id %}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+    <td><a class="btn btn-danger" href="#" onclick="hapus_seafood( '{{ seafood.id }}' ,  '{{ seafood.nama }}' ) "><i class="fa-solid fa-trash"></i></a></td>
+  </tr>
+{% endfor %}
+    </tbody>
+    </table>
+
+    <script>
+      function hapus_seafood(id_seafood, nama)
+      {swal({
+        title: "Apakah anda yakin?",
+        text: "Setelah data " + nama + " dihapus data tidak dapat dikembalikan",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Berhasil ", "Data " + nama + " berhasil dihapus!", "success").then(function() {
+            window.location = "/foods/delete_sea/" + id_seafood;
+          })
+        } 
+      });}
+    </script>
+
+    <a class="btn btn-success" href="/tambah_sea">Tambah Data</a>
+{% endblock %}

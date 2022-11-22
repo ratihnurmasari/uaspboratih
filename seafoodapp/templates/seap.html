@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <br>
+    <h1>Sea Pineapple</h1>
+    <br>
+    <div class="container text-justify">
+        <div class="row">
+          <div class="col">
+            <img src="{% static 'seapineapple.jpg' %}" alt="" width="100%">
+            <br><br>
+            <pre>
+                Klasifikasi <hr>
+                Kingdom : Animalia
+                Filum   : Chordata
+                Kelas   : Ascidiacea
+                Ordo    : Stolidobranchia
+                Famili  : Pyuridae
+                Genus   : Halocynthia
+                spesies : <i>Halocynthia roretzi</i>
+            </pre>
+          </div>
+          <div class="col">
+            <b>Ciri-ciri</b>
+            <p>Nanas laut memiliki tubuh seperti kantung dengan panjang sekitar 12 cm dan lebar 7 cm. Nanas laut termasuk hewan laut yang hidup secara soliter dengan bagian luar tubuh (tunic) yang tebal dan kuat terbentuk dari polisakarida.</p>
+            <br>
+            <b>Persebaran</b>
+            <p>Nanas laut ini tersebar di wilayah subtropikal tepatpnya di asia timur (korea dan bagian utara jepang). Di negara-negara tersebut, khususnya jepang, nanas laut dibudidaya dan dimanfaatkan menjadi suatu hidangan.</p>
+            <br>
+            <b>Manfaat</b>
+            <p>Dijadikan hidangan, Nanas laut dianggap makanan laut yang kaya akan nutrisi. Untuk mendapat rasa terbaik dari nanas laut, konsumsi setelah panen lebih disarankan. Ketika nanas laut sudah tidak segar lagi, maka akan timbul sedikit rasa metal. Nanas laut dinilai memiliki rasa yang unuk karena mengandung cynthiaol yaitu alkohol tidak jenuh.</p>
+          </div>
+        </div>
+        <a href="/beranda/" class="btn btn-info">Kembali</a>
+    </div>
+    <br> 
+    <div class="sumber">
+     <p>Sumber : Kompasiana</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <br>
+    <h1>Kepiring Bakau</h1>
+    <br>
+    <div class="container text-justify">
+        <div class="row">
+          <div class="col">
+            <img src="{% static 'kepitingb.jpg' %}" alt="" width="100%">
+            <br><br>
+            <pre>
+                Klasifikasi <hr>
+                Kingdom : Animalia
+                Filum   : Arthropoda
+                Kelas   : Malacostraca 
+                Ordo    : Decapoda 
+                Famili  : Portinuidae 
+                Genus   : Scylla
+                spesies : <i> Scylla paramamosain</i>
+            </pre>
+          </div>
+          <div class="col">
+            <b>Ciri-ciri</b>
+            <p>Kepiting memiliki bentuk tubuh yang lebar melintang. Ciri khas yang dimiliki
+                bangsa kepiting adalah karapas berbentuk pipih atau agak cembung dan berbentuk
+                heksagonal atau agak persegi (Afrianto dan Liviawaty, 1992). </p>
+            <br>
+            <b>Persebaran</b>
+            <p>Afrianto dan Liviawaty (1992) menjelaskan bahwa habitat kepiting beragam, mulai
+                dari lingkungan air, baik tawar maupun asin dan lingkungan daratan. Ada beberapa jenis
+                kepiting yang menyukai hidup di lingkungan berbatu, namun ada pula yang senang hidup
+                diantara akar tumbuh-tumbuhan air. </p>
+            <br>
+            <b>Manfaat</b>
+            <p>Banyak dijadikan bahan olahan makanan atau dijadikan fresh seafood oleh beberapa orang. </p>
+          </div>
+        </div>
+        <a href="/beranda/" class="btn btn-info">Kembali</a>
+    </div>
+    <br> 
+    <div class="sumber">
+      <p>Sumber : repository.unair.ac.id</p>
+    </div>
+{% endblock %}

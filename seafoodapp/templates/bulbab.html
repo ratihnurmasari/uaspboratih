@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <br>
+    <h1>Bulu Babi</h1>
+    <br>
+    <div class="container text-justify">
+        <div class="row">
+          <div class="col">
+            <img src="{% static 'bulubabi.jpg' %}" alt="" width="100%">
+            <br><br>
+            <pre>
+                Klasifikasi <hr>
+                Kingdom : Animalia
+                Filum   : Echinodermata
+                Kelas   : Echinoidea
+                Ordo    : Echinoida
+                Famili  : Echinidae
+                Genus   : Echinus
+                spesies : <i>Echinus spp.</i>
+            </pre>
+          </div>
+          <div class="col">
+            <b>Ciri-ciri</b>
+            <p>Landak laut atau yang sering disebur bulu babi merupakan hewan laut yang berbentuk bundar dan ditutupi oleh duri. Duri tersebut dapat digerakkan di seluruh permukaan tubuhnya. Bagian tubuhnya dibagi menjadi <b> oral dan aboral </b>.Cangkang tersusun oleh zat kapur yang tersusun membentuk pola. Duri-duri di permukaan tubuhnya bersendi pada bagian yang menonjol (tuberkel) sedangkan bagian yang tidak berduri terlihat memiliki kaki tabung (kaki ambulakral) yang digerakkan oleh sistem peredaran air. Landak laut dapat dijumpai di daerah pasang surut hingga kedalaman 5000 meter dengan substrat karang maupun pasir.</p>
+            <br>
+            <b>Persebaran</b>
+            <p>Bulu babi tersebar di seluruh dunia terutama tropis dan subtropis. Tersebar sepanjang daerah interdal pantai yang berkarang. Keragaman jenis landak laut ini mencapai 14 jenis.</p>
+            <br>
+            <b>Manfaat</b>
+            <p>Gonad/telur dari bulu babi dapat dimanfaatkan sebagai bahan makanan. Pemanfaatan masih sangat sederhana belum seperti halnya di Jepang dan Korea yang sudah menjadi makanan populer yang khas.</p>
+          </div>
+        </div>
+        <a href="/beranda/" class="btn btn-info">Kembali</a>
+    </div>
+    <br> 
+    <div class="sumber">
+      <p>Sumber : Profil Kehati DIY Tahun 2016</p>
+    </div>
+{% endblock %}
