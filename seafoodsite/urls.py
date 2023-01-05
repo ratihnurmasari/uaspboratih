@@ -15,10 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from seafoodapp.views import beranda, abalon, seap, bulbab, sw, kepiting, gurita,tambah_sea, update_sea, delete_sea
+from seafoodapp import views
+from seafoodapp.views import beranda, abalon, seap, bulbab, sw, kepiting, gurita,tambah_sea, update_sea, delete_sea, index, register, login, lokasi, tambah_map, update_map, delete_map
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+        path('register/',views.register , name='register'),
+    path('login/',views.login , name='login'),
+    path('logout/',views.logoutUser , name='logout'),
+    #path('accounts/', include('django.contrib.auth.urls')),
+    path('beranda/', beranda),
+    path('lokasi/', views.lokasi, name='lokasi'),
+    path('index/', views.index, name="index"),
     path('beranda/', beranda),
     path('abalon/', abalon),
     path('seap/', seap),
@@ -29,5 +37,8 @@ urlpatterns = [
     path('tambah_sea/', tambah_sea),
     path('foods/update_sea/<int:id_foods>', update_sea, name='update_sea'),
     path('foods/delete_sea/<int:id_foods>', delete_sea, name='delete_sea'),
+    path('tambah_map/', tambah_map),
+    path('maps/update_map/<int:id_maps>', update_map, name='update_map'),
+    path('maps/delete_map/<int:id_maps>', delete_map, name='delete_map'),
 ] 
 

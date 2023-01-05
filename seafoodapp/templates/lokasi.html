@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<br><br>
+<div class="container">
+  <h3 style="text-align: center;"><b>Lokasi Restoran Seafood</b></h3><br>
+  <div class="row">
+    <div class="col-md-12" id="map"></div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <table class="table table-striped table-hover" width="100%" style="text-align: center;">
+  
+      <thead>
+        <tr>
+          <th scope="col">Nama Tempat</th>
+          <th scope="col">Koordinat</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+  {% for map in maps %}
+  <tr>
+      <td>{{ map.nama_tempat }}</td>
+      <td>{{ map.koordinat }}</td>
+      <td>
+        <a class="btn btn-warning" href="{% url 'update_map' map.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a class="btn btn-danger" href="#" onclick="hapus_map ( '{{ map.id }}' ,  '{{ map.nama_tempat }}' ) "><i class="fa-solid fa-trash"></i></a>
+      </td>
+    </tr>
+  {% endfor %}
+      </tbody>
+      </table>
+      <a class="btn btn-success" href="/tambah_map">Tambah Data</a>
+    </div>
+
+    <script>
+      function hapus_map(id_map, nama_tempat)
+      {swal({
+        title: "Apakah anda yakin?",
+        text: "Setelah data " + nama_tempat + " dihapus data tidak dapat dikembalikan",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Berhasil ", "Data " + nama_tempat + " berhasil dihapus!", "success").then(function() {
+            window.location = "/maps/delete_map/" + id_map;
+          })
+        } 
+      });}
+    </script>
+
+<script>
+  //L.marker(['{{map.koordinat}}']).addTo(map). bindPopup("Nama Tempat: <b>{{map.nama_tempat}}</b>");
+
+</script>
+{% endblock %}

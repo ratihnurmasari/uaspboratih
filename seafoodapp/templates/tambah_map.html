@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+
+<div class="container">
 <br>
 <h1>{{Heading}}</h1>
-<div class="container">
+
+
 <div class="row">
     <div class="col-md-6">
         {% if pesan %}
@@ -12,15 +15,16 @@
         </script>
     
          {% endif %}
-            <form action="/tambah_sea/" method="POST">
+            <form action="/tambah_map/" method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
 
                 <input type="submit" value="simpan" class="btn btn-primary">
-                <a href="/beranda" class="btn btn-warning">Kembali</a>
+                <a href="/lokasi" class="btn btn-warning">Kembali</a>
             </form>
 
 </div>
 </div>
+
 </div>
 {% endblock %}

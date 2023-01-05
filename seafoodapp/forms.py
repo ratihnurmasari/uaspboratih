@@ -20,3 +20,14 @@ class Formseafood(ModelForm):
 
             'detail' : forms.TextInput({'class' : 'form-control', 'placeholder' : 'isi oleh admin'} ),
         }
+
+class Formmap(ModelForm):
+    class Meta:
+        model = map
+        fields = '__all__'
+        
+        widgets = {
+            'nama_tempat' : forms.TextInput({'class' : 'form-control', 'placeholder' : 'Masukan nama tempat'} ),
+
+            'koordinat' : forms.TextInput({'class' : 'form-control', 'placeholder' : 'Masukan koordinat'} ),
+        }

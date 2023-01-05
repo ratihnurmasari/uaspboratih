@@ -20,3 +20,10 @@ class seafood(models.Model):
 
     def __str__(self):
         return self.nama
+
+class map(models.Model):
+    nama_tempat =  models.CharField(max_length=100)
+    koordinat = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nama_tempat
